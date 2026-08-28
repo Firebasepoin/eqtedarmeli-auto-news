@@ -1,0 +1,16 @@
+name: crawler
+on:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install axios
+      - run: node src/crawler.js
+      - run: node src/summarizer.js
+      - run: node src/rewriter.js
+      - run: node src/reviewer.js
+    env:
+      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
