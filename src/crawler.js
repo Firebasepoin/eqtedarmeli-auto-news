@@ -7,6 +7,7 @@ const BOT_TOKEN = process.env.BOT_TOKEN;
 const CHANNELS = [
   "Tasnimnews",
   "yjcnewschannel",
+  "shahidmortezachegini",
   "nasimonline",
   "alalamfa"
 ];
