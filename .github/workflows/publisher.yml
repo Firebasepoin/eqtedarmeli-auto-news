@@ -1,0 +1,13 @@
+name: publisher
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install axios
+      - run: node src/publisher.js
+    env:
+      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
